@@ -1,0 +1,169 @@
+species_scientific,age_years,dbh_cm,height_m,source_for_growth
+Tectona grandis,0,0.0,0.0,Teak plantation anchors; interpolated
+Tectona grandis,1,1.8,1.2,Teak plantation anchors; interpolated
+Tectona grandis,2,3.6,2.4,Teak plantation anchors; interpolated
+Tectona grandis,3,5.4,3.6,Teak plantation anchors; interpolated
+Tectona grandis,4,7.2,4.8,Teak plantation anchors; interpolated
+Tectona grandis,5,9.0,6.0,Teak plantation anchors; interpolated
+Tectona grandis,6,10.8,7.2,Teak plantation anchors; interpolated
+Tectona grandis,7,12.6,8.4,Teak plantation anchors; interpolated
+Tectona grandis,8,14.4,9.6,Teak plantation anchors; interpolated
+Tectona grandis,9,16.2,10.8,Teak plantation anchors; interpolated
+Tectona grandis,10,18.0,12.0,Teak plantation anchors; interpolated
+Tectona grandis,11,19.0,13.0,Teak plantation anchors; interpolated
+Tectona grandis,12,20.0,14.0,Teak plantation anchors; interpolated
+Tectona grandis,13,21.0,15.0,Teak plantation anchors; interpolated
+Tectona grandis,14,22.0,16.0,Teak plantation anchors; interpolated
+Tectona grandis,15,23.0,17.0,Teak plantation anchors; interpolated
+Tectona grandis,16,24.0,18.0,Teak plantation anchors; interpolated
+Tectona grandis,17,25.0,19.0,Teak plantation anchors; interpolated
+Tectona grandis,18,26.0,20.0,Teak plantation anchors; interpolated
+Tectona grandis,19,27.0,21.0,Teak plantation anchors; interpolated
+Tectona grandis,20,28.0,22.0,Teak plantation anchors; interpolated
+Azadirachta indica,0,0.0,0.0,Neem growth anchors; interpolated
+Azadirachta indica,1,1.2,0.8,Neem growth anchors; interpolated
+Azadirachta indica,2,2.4,1.6,Neem growth anchors; interpolated
+Azadirachta indica,3,3.6,2.4,Neem growth anchors; interpolated
+Azadirachta indica,4,4.8,3.2,Neem growth anchors; interpolated
+Azadirachta indica,5,6.0,4.0,Neem growth anchors; interpolated
+Azadirachta indica,6,7.2,4.8,Neem growth anchors; interpolated
+Azadirachta indica,7,8.4,5.6,Neem growth anchors; interpolated
+Azadirachta indica,8,9.6,6.4,Neem growth anchors; interpolated
+Azadirachta indica,9,10.8,7.2,Neem growth anchors; interpolated
+Azadirachta indica,10,12.0,8.0,Neem growth anchors; interpolated
+Azadirachta indica,11,12.8,8.4,Neem growth anchors; interpolated
+Azadirachta indica,12,13.6,8.8,Neem growth anchors; interpolated
+Azadirachta indica,13,14.4,9.2,Neem growth anchors; interpolated
+Azadirachta indica,14,15.2,9.6,Neem growth anchors; interpolated
+Azadirachta indica,15,16.0,10.0,Neem growth anchors; interpolated
+Azadirachta indica,16,16.8,10.4,Neem growth anchors; interpolated
+Azadirachta indica,17,17.6,10.8,Neem growth anchors; interpolated
+Azadirachta indica,18,18.4,11.2,Neem growth anchors; interpolated
+Azadirachta indica,19,19.2,11.6,Neem growth anchors; interpolated
+Azadirachta indica,20,20.0,12.0,Neem growth anchors; interpolated
+Samanea saman,0,0.0,0.0,Rain tree fast growth; interpolated
+Samanea saman,1,2.2,1.5,Rain tree fast growth; interpolated
+Samanea saman,2,4.4,3.0,Rain tree fast growth; interpolated
+Samanea saman,3,6.6,4.5,Rain tree fast growth; interpolated
+Samanea saman,4,8.8,6.0,Rain tree fast growth; interpolated
+Samanea saman,5,11.0,7.5,Rain tree fast growth; interpolated
+Samanea saman,6,13.2,9.0,Rain tree fast growth; interpolated
+Samanea saman,7,15.4,10.5,Rain tree fast growth; interpolated
+Samanea saman,8,17.6,12.0,Rain tree fast growth; interpolated
+Samanea saman,9,19.8,13.5,Rain tree fast growth; interpolated
+Samanea saman,10,22.0,15.0,Rain tree fast growth; interpolated
+Samanea saman,11,23.3,16.0,Rain tree fast growth; interpolated
+Samanea saman,12,24.6,17.0,Rain tree fast growth; interpolated
+Samanea saman,13,25.9,18.0,Rain tree fast growth; interpolated
+Samanea saman,14,27.2,19.0,Rain tree fast growth; interpolated
+Samanea saman,15,28.5,20.0,Rain tree fast growth; interpolated
+Samanea saman,16,29.8,20.0,Rain tree fast growth; interpolated
+Samanea saman,17,31.1,20.0,Rain tree fast growth; interpolated
+Samanea saman,18,32.4,20.0,Rain tree fast growth; interpolated
+Samanea saman,19,33.7,20.0,Rain tree fast growth; interpolated
+Samanea saman,20,35.0,20.0,Rain tree fast growth; interpolated
+Terminalia arjuna,0,0.0,0.0,Arjun avenue growth; interpolated
+Terminalia arjuna,1,1.8,1.0,Arjun avenue growth; interpolated
+Terminalia arjuna,2,3.6,2.0,Arjun avenue growth; interpolated
+Terminalia arjuna,3,5.4,3.0,Arjun avenue growth; interpolated
+Terminalia arjuna,4,7.2,4.0,Arjun avenue growth; interpolated
+Terminalia arjuna,5,9.0,5.0,Arjun avenue growth; interpolated
+Terminalia arjuna,6,10.8,6.0,Arjun avenue growth; interpolated
+Terminalia arjuna,7,12.6,7.0,Arjun avenue growth; interpolated
+Terminalia arjuna,8,14.4,8.0,Arjun avenue growth; interpolated
+Terminalia arjuna,9,16.2,9.0,Arjun avenue growth; interpolated
+Terminalia arjuna,10,18.0,10.0,Arjun avenue growth; interpolated
+Terminalia arjuna,11,19.0,10.8,Arjun avenue growth; interpolated
+Terminalia arjuna,12,20.0,11.6,Arjun avenue growth; interpolated
+Terminalia arjuna,13,21.0,12.4,Arjun avenue growth; interpolated
+Terminalia arjuna,14,22.0,13.2,Arjun avenue growth; interpolated
+Terminalia arjuna,15,23.0,14.0,Arjun avenue growth; interpolated
+Terminalia arjuna,16,24.0,14.8,Arjun avenue growth; interpolated
+Terminalia arjuna,17,25.0,15.6,Arjun avenue growth; interpolated
+Terminalia arjuna,18,26.0,16.4,Arjun avenue growth; interpolated
+Terminalia arjuna,19,27.0,17.2,Arjun avenue growth; interpolated
+Terminalia arjuna,20,28.0,18.0,Arjun avenue growth; interpolated
+Casuarina equisetifolia,0,0.0,0.0,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,1,1.5,1.2,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,2,3.0,2.4,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,3,4.5,3.6,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,4,6.0,4.8,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,5,7.5,6.0,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,6,9.0,7.2,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,7,10.5,8.4,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,8,12.0,9.6,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,9,13.5,10.8,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,10,15.0,12.0,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,11,15.8,12.9,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,12,16.6,13.8,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,13,17.4,14.7,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,14,18.2,15.6,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,15,19.0,16.5,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,16,19.8,17.4,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,17,20.6,18.3,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,18,21.4,19.2,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,19,22.2,20.1,Casuarina coastal plantations; interpolated
+Casuarina equisetifolia,20,23.0,21.0,Casuarina coastal plantations; interpolated
+Mangifera indica,0,0.0,0.0,Mango agroforestry growth; interpolated
+Mangifera indica,1,1.4,1.0,Mango agroforestry growth; interpolated
+Mangifera indica,2,2.8,2.0,Mango agroforestry growth; interpolated
+Mangifera indica,3,4.2,3.0,Mango agroforestry growth; interpolated
+Mangifera indica,4,5.6,4.0,Mango agroforestry growth; interpolated
+Mangifera indica,5,7.0,5.0,Mango agroforestry growth; interpolated
+Mangifera indica,6,8.4,6.0,Mango agroforestry growth; interpolated
+Mangifera indica,7,9.8,7.0,Mango agroforestry growth; interpolated
+Mangifera indica,8,11.2,8.0,Mango agroforestry growth; interpolated
+Mangifera indica,9,12.6,9.0,Mango agroforestry growth; interpolated
+Mangifera indica,10,14.0,10.0,Mango agroforestry growth; interpolated
+Mangifera indica,11,14.9,10.6,Mango agroforestry growth; interpolated
+Mangifera indica,12,15.8,11.2,Mango agroforestry growth; interpolated
+Mangifera indica,13,16.7,11.8,Mango agroforestry growth; interpolated
+Mangifera indica,14,17.6,12.4,Mango agroforestry growth; interpolated
+Mangifera indica,15,18.5,13.0,Mango agroforestry growth; interpolated
+Mangifera indica,16,19.4,13.6,Mango agroforestry growth; interpolated
+Mangifera indica,17,20.3,14.2,Mango agroforestry growth; interpolated
+Mangifera indica,18,21.2,14.8,Mango agroforestry growth; interpolated
+Mangifera indica,19,22.1,15.4,Mango agroforestry growth; interpolated
+Mangifera indica,20,23.0,16.0,Mango agroforestry growth; interpolated
+Polyalthia longifolia,0,0.0,0.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,1,1.2,1.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,2,2.4,2.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,3,3.6,3.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,4,4.8,4.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,5,6.0,5.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,6,7.2,6.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,7,8.4,7.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,8,9.6,8.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,9,10.8,9.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,10,12.0,10.0,Ashoka urban growth; interpolated
+Polyalthia longifolia,11,12.8,10.7,Ashoka urban growth; interpolated
+Polyalthia longifolia,12,13.6,11.4,Ashoka urban growth; interpolated
+Polyalthia longifolia,13,14.4,12.1,Ashoka urban growth; interpolated
+Polyalthia longifolia,14,15.2,12.8,Ashoka urban growth; interpolated
+Polyalthia longifolia,15,16.0,13.5,Ashoka urban growth; interpolated
+Polyalthia longifolia,16,16.8,14.2,Ashoka urban growth; interpolated
+Polyalthia longifolia,17,17.6,14.9,Ashoka urban growth; interpolated
+Polyalthia longifolia,18,18.4,15.6,Ashoka urban growth; interpolated
+Polyalthia longifolia,19,19.2,16.3,Ashoka urban growth; interpolated
+Polyalthia longifolia,20,20.0,17.0,Ashoka urban growth; interpolated
+Delonix regia,0,0.0,0.0,Gulmohar urban growth; interpolated
+Delonix regia,1,1.5,1.2,Gulmohar urban growth; interpolated
+Delonix regia,2,3.0,2.4,Gulmohar urban growth; interpolated
+Delonix regia,3,4.5,3.6,Gulmohar urban growth; interpolated
+Delonix regia,4,6.0,4.8,Gulmohar urban growth; interpolated
+Delonix regia,5,7.5,6.0,Gulmohar urban growth; interpolated
+Delonix regia,6,9.0,7.2,Gulmohar urban growth; interpolated
+Delonix regia,7,10.5,8.4,Gulmohar urban growth; interpolated
+Delonix regia,8,12.0,9.6,Gulmohar urban growth; interpolated
+Delonix regia,9,13.5,10.8,Gulmohar urban growth; interpolated
+Delonix regia,10,15.0,12.0,Gulmohar urban growth; interpolated
+Delonix regia,11,16.0,12.8,Gulmohar urban growth; interpolated
+Delonix regia,12,17.0,13.6,Gulmohar urban growth; interpolated
+Delonix regia,13,18.0,14.4,Gulmohar urban growth; interpolated
+Delonix regia,14,19.0,15.2,Gulmohar urban growth; interpolated
+Delonix regia,15,20.0,16.0,Gulmohar urban growth; interpolated
+Delonix regia,16,21.0,16.8,Gulmohar urban growth; interpolated
+Delonix regia,17,22.0,17.6,Gulmohar urban growth; interpolated
+Delonix regia,18,23.0,18.4,Gulmohar urban growth; interpolated
+Delonix regia,19,24.0,19.2,Gulmohar urban growth; interpolated
+Delonix regia,20,25.0,20.0,Gulmohar urban growth; interpolated

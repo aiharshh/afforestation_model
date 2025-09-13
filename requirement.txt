@@ -1,0 +1,6 @@
+pandas
+matplotlib
+numpy
+
+install the requirement with 
+pip install -r requirements.txt
