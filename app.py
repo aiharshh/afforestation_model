@@ -2,6 +2,11 @@ from flask import Flask, request, jsonify, render_template_string
 import sys
 from src.data_loader import load_growth_curves, load_species_master
 from src.model import biomass_to_co2
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import io
+import base64
 
 app = Flask(__name__)
 
@@ -20,6 +25,7 @@ HTML_FORM = '''
         button { margin-top: 24px; background: #43a047; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 16px; }
         .result { margin-top: 32px; background: #e8f5e9; padding: 16px; border-radius: 6px; }
         .error { color: #c62828; margin-top: 24px; }
+        .plot-img { margin-top: 24px; max-width: 100%; border-radius: 6px; box-shadow: 0 1px 4px #b2d8b2; }
     </style>
 </head>
 <body>
@@ -48,6 +54,9 @@ HTML_FORM = '''
                 <li>Year {{r['age_years']}}: {{r['Total_CO2_sequestered']|round(2)}} kg</li>
             {% endfor %}
             </ul>
+            {% if plot_url %}
+            <img class="plot-img" src="{{plot_url}}" alt="CO₂ Sequestration Graph">
+            {% endif %}
         </div>
         {% endif %}
         {% if error %}
@@ -67,10 +76,11 @@ def index():
             species_col = col
             break
     if not species_col:
-        return render_template_string(HTML_FORM, species_list=[], error="Species column not found", result=None, selected_species=None, years=5, trees=100)
+        return render_template_string(HTML_FORM, species_list=[], error="Species column not found", result=None, selected_species=None, years=5, trees=100, plot_url=None)
     species_list = sorted(df_species[species_col].unique())
     error = None
     result = None
+    plot_url = None
     selected_species = species_list[0] if species_list else None
     years = 5
     trees = 100
@@ -122,7 +132,21 @@ def index():
                         'results': results,
                         'summary': f"Planting {trees} {selected_species} trees will sequester ~{final_val:.2f} metric tons of CO₂ over {years} years."
                     }
-    return render_template_string(HTML_FORM, species_list=species_list, error=error, result=result, selected_species=selected_species, years=years, trees=trees)
+                    # Generate plot in memory
+                    fig, ax = plt.subplots(figsize=(6,4))
+                    ax.plot([r['age_years'] for r in results], [r['Total_CO2_sequestered'] for r in results], marker='o', color='#388e3c')
+                    ax.set_xlabel('Year')
+                    ax.set_ylabel('Total CO₂ Sequestered (kg)')
+                    ax.set_title('Yearly CO₂ Sequestration')
+                    ax.grid(True, linestyle='--', alpha=0.5)
+                    fig.tight_layout()
+                    buf = io.BytesIO()
+                    plt.savefig(buf, format='png')
+                    plt.close(fig)
+                    buf.seek(0)
+                    plot_data = base64.b64encode(buf.read()).decode('utf-8')
+                    plot_url = f'data:image/png;base64,{plot_data}'
+    return render_template_string(HTML_FORM, species_list=species_list, error=error, result=result, selected_species=selected_species, years=years, trees=trees, plot_url=plot_url)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5050)
