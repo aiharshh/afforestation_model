@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afforestation Impact Model</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Plotly CDN for interactive chart -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+  <script>
+    // theme toggle persistence
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      const t = document.getElementById('themeToggle');
+      if (t) t.checked = (saved === 'dark');
+    });
+    function toggleTheme(chk) {
+      const theme = chk.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+  </script>
+</head>
+<body>
+  <div class="animated-bg">
+    <div class="bg-gradient"></div>
+    <div class="tree-line">
+      <svg viewBox="0 0 1200 200" preserveAspectRatio="none" class="trees">
+        <g opacity="0.6" transform="translate(0,20)">
+          <rect x="50" y="80" width="25" height="80" rx="8" />
+          <circle cx="62" cy="70" r="40" />
+          <rect x="200" y="90" width="22" height="70" rx="8" />
+          <circle cx="211" cy="80" r="35" />
+          <rect x="360" y="85" width="24" height="75" rx="8" />
+          <circle cx="372" cy="75" r="38" />
+          <rect x="520" y="95" width="22" height="65" rx="8" />
+          <circle cx="531" cy="85" r="34" />
+          <rect x="680" y="88" width="24" height="72" rx="8" />
+          <circle cx="692" cy="78" r="36" />
+          <rect x="840" y="92" width="24" height="68" rx="8" />
+          <circle cx="852" cy="82" r="34" />
+          <rect x="1000" y="86" width="24" height="74" rx="8" />
+          <circle cx="1012" cy="76" r="39" />
+        </g>
+      </svg>
+    </div>
+    <div class="leaf leaf1"></div>
+    <div class="leaf leaf2"></div>
+    <div class="leaf leaf3"></div>
+    <div class="leaf leaf4"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">Afforestation Impact Model</div>
+    <label class="theme-switch">
+      <input id="themeToggle" type="checkbox" onchange="toggleTheme(this)" />
+      <span>🌙</span>
+    </label>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">© {{ 2025 }} Afforestation Impact Model</footer>
+</body>
+</html>

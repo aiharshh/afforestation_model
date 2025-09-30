@@ -1,31 +1,48 @@
 # src/data_loader.py
-
 import pandas as pd
+from .config import pick_csv
 
-def load_growth_curves(filepath: str) -> pd.DataFrame:
-    """Load tree growth curves dataset."""
-    try:
-        df = pd.read_csv(filepath)
-        print(f"✅ Loaded growth curves with columns: {list(df.columns)}")
-        return df
-    except Exception as e:
-        print(f"❌ Failed to load growth curves: {e}")
-        return pd.DataFrame()
+def load_growth_curves(path: str | None = None) -> pd.DataFrame:
+    fp = path or pick_csv("growth_curves_filled")
+    df = pd.read_csv(fp)
+    # Ensure expected columns exist
+    needed = {"species_scientific", "age_years", "dbh_cm", "height_m"}
+    missing = needed - set(df.columns)
+    if missing:
+        raise ValueError(f"Growth curves missing columns: {missing} in {fp}")
+    return df
 
-def load_species_master(filepath: str) -> pd.DataFrame:
-    """Load species master dataset and validate key columns."""
-    try:
-        df = pd.read_csv(filepath)
-        print(f"✅ Loaded species master with columns: {list(df.columns)}")
+def load_species_master(path: str | None = None) -> pd.DataFrame:
+    fp = path or pick_csv("species_master_filled")
+    df = pd.read_csv(fp)
 
-        # Pick the correct species identifier column
-        if "species" not in df.columns:
-            if "species_scientific" in df.columns:
-                df = df.rename(columns={"species_scientific": "species"})
-                print("ℹ️ Renamed 'species_scientific' → 'species'")
-            else:
-                print("❌ No valid species column found (expected 'species' or 'species_scientific').")
-        return df
-    except Exception as e:
-        print(f"❌ Failed to load species master: {e}")
-        return pd.DataFrame()
+    # Normalize species column name
+    if "species" not in df.columns:
+        if "species_scientific" in df.columns:
+            df = df.rename(columns={"species_scientific": "species"})
+        else:
+            raise ValueError("No species column (species or species_scientific) found in species master.")
+
+    # Fill defaults if not present
+    if "carbon_fraction_CF" not in df.columns:
+        df["carbon_fraction_CF"] = 0.47
+    if "root_to_shoot_ratio_R" not in df.columns:
+        df["root_to_shoot_ratio_R"] = 0.27
+    if "annual_survival_rate" not in df.columns:
+        df["annual_survival_rate"] = 0.95
+
+    # Wood density
+    wd_col = None
+    for c in df.columns:
+        if c.lower() in ("wood_density_g_cm3","wood_density","density","rho","ρ","rho_g_cm3"):
+            wd_col = c
+            break
+    if wd_col is None:
+        raise ValueError("No wood density column found in species master.")
+    df = df.rename(columns={wd_col: "wood_density_g_cm3"})
+
+    return df
+
+def load_sim_results(path: str | None = None) -> pd.DataFrame:
+    fp = path or pick_csv("sim_results")
+    return pd.read_csv(fp)

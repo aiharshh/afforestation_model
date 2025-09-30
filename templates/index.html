@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="dashboard">
+  <aside class="panel">
+    <h2>Inputs</h2>
+    <form method="POST" class="form">
+      <label>
+        Species (multi-select)
+        <select name="species" multiple size="6" required>
+          {% for s in species_list %}
+            <option value="{{ s }}" {% if s in selected_species %}selected{% endif %}>{{ s }}</option>
+          {% endfor %}
+        </select>
+        <small>Hold Ctrl/Cmd to select multiple</small>
+      </label>
+
+      <label>
+        Years
+        <input type="number" min="1" max="100" name="years" value="{{ years }}" required />
+      </label>
+
+      <label>
+        Trees planted (per species)
+        <input type="number" min="1" step="1" name="trees" value="{{ trees }}" required />
+      </label>
+
+      <button type="submit" class="btn">Run Simulation</button>
+    </form>
+
+    <div class="panel-sec">
+      <h3>Exports</h3>
+      <div class="actions">
+        <a class="btn mini" href="{{ csv_url }}">Download CSV</a>
+        <a class="btn mini" href="{{ pdf_url }}">Download PDF</a>
+      </div>
+      <p class="muted">Exports reflect the current inputs.</p>
+    </div>
+
+    <div class="panel-sec">
+      <h3>Map View</h3>
+      <a class="btn mini" href="{{ url_for('map_view') }}">Open Map</a>
+      <p class="muted">Place your plantation on a map and view CO₂ at a location.</p>
+    </div>
+  </aside>
+
+  <section class="main">
+    <div class="card">
+      <h2>Interactive Chart</h2>
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% else %}
+        <div id="interactivePlot" style="width:100%;height:440px;"></div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const fig = {{ plotly_fig|tojson }};
+            Plotly.newPlot('interactivePlot', fig.data, fig.layout, {
+              displaylogo: false,
+              responsive: true
+            });
+          });
+        </script>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <h2>PNG Snapshot</h2>
+      {% if plot_url %}
+        <img class="chart" src="{{ plot_url }}" alt="CO2 plot" />
+      {% else %}
+        <p class="muted">Run simulation to view chart.</p>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <h2>Final-Year Stats</h2>
+      {% if table_rows and table_rows|length > 0 %}
+        <div class="table">
+          <div class="tr th">
+            <div>Species</div>
+            <div>Year</div>
+            <div>Trees Alive</div>
+            <div>Yearly CO₂ (t)</div>
+            <div>Cumulative CO₂ (t)</div>
+          </div>
+          {% for r in table_rows %}
+            <div class="tr">
+              <div>{{ r.species }}</div>
+              <div>{{ r.age_years }}</div>
+              <div>{{ r.trees_alive }}</div>
+              <div>{{ r.co2_year_t }}</div>
+              <div>{{ r.co2_cum_t }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="muted">Run simulation to view stats.</p>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <h2>Notes</h2>
+      <p class="muted">
+        AGB = 0.0673·(ρ·D²·H)^0.976; total biomass = AGB + R·AGB; CO₂ = biomass·CF·3.67.<br/>
+        Defaults: CF = 0.47, R = 0.27, annual survival = 0.95 (overridden by species master).
+      </p>
+    </div>
+  </section>
+</section>
+{% endblock %}
